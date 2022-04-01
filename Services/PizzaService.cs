@@ -81,6 +81,9 @@ public class PizzaService
         .Include(p => p.Sauce)
         .SingleOrDefault(p => p.Id ==  pizzaUpdate.Id);
 
+        piiza.Name=pizzaUpdate.Name;
+        _context.SaveChanges();
+
         foreach( Topping t in piiza.Toppings.ToList()){
             piiza.Toppings.Remove(t);    
         }

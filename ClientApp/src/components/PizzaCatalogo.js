@@ -121,7 +121,10 @@ export class PizzaCatalogo extends Component {
 
     edit = (pizza) => {
         console.log(pizza.name);
+        console.log(this.state.name);
         pizza.id = this.state.pizzaE.id;
+        pizza.name = this.state.name;
+        
 
         authService.getAccessToken().then(
             (token) => {
